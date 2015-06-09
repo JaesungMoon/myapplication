@@ -16,6 +16,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         Button btnGagebu = (Button)findViewById(R.id.buttonGagebu);
         btnGagebu.setOnClickListener(this);
+
         Button btnExit = (Button)findViewById(R.id.buttonExit);
         btnExit.setOnClickListener(this);
     }

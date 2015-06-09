@@ -24,6 +24,6 @@ public class GagebuActivity extends ActionBarActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         week++;
-        textViewWeek.setText("6월" + week + "주차");
+        textViewWeek.setText("6월" + week + "주");
     }
 }
