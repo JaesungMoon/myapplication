@@ -13,7 +13,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //test
         Button btnGagebu = (Button)findViewById(R.id.buttonGagebu);
         btnGagebu.setOnClickListener(this);
 
