@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Medium Text"
-                android:id="@+id/textView3"
+                android:id="@+id/textViewWeek1"
                 android:layout_weight="0.84" />
 
             <Button
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Medium Text"
-                android:id="@+id/textView4"
+                android:id="@+id/textViewWeek2"
                 android:layout_weight="0.85" />
 
             <Button
