@@ -39,6 +39,31 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
          */
     }
+    public void onClick4(View v){
+        /*
+        slkdhflhsldfb미;ㄴ어;ㅣㅁ능
+
+        kljhsldfhlbsa
+        KKKSADfk;ln
+
+         */
+    }
+    public void onClick5(View v){
+        /*
+        slkdhflhsldfb
+        kljhsldfhlbㅁ니;ㅏ어;ㅏ미눙sa
+        KKKSADfk;ln
+
+         */
+    }
+    public void onClick7(View v){
+        /*
+        slkdhflhsldfb
+        kljhsldfhlbsa
+        KKKSADfk;ln
+
+         */
+    }
     public void onClick2(View v){
         /*
         slkdhflhsldfb
