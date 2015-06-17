@@ -4,4 +4,14 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_gagebu">GagebuActivity</string>
+
+
+    <string name="week_name_1">월요일</string>
+    <string name="week_name_2">화요일</string>
+    <string name="week_name_3">수요일</string>
+    <string name="week_name_4">목요일</string>
+    <string name="week_name_5">금요일</string>
+    <string name="week_name_6">토요일</string>
+    <string name="week_name_7">일요일</string>
+
 </resources>
