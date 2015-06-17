@@ -31,4 +31,20 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
         }
     }
+    public void onClick1(View v){
+        /*
+        slkdhflhsldfb
+        kljhsldfhlbsa
+        KKKSADfk;ln
+
+         */
+    }
+    public void onClick2(View v){
+        /*
+        slkdhflhsldfb
+        kljhsldfhlbsa
+        KKKSADfk;ln
+
+         */
+    }
 }
