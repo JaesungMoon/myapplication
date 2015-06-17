@@ -13,5 +13,6 @@
     <string name="week_name_5">금요일</string>
     <string name="week_name_6">토요일</string>
     <string name="week_name_7">일요일</string>
+    <string name="title_activity_main_activity2">MainActivity2Activity</string>
 
 </resources>

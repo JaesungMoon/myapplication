@@ -20,6 +20,10 @@
             android:name=".GagebuActivity"
             android:label="@string/title_activity_gagebu" >
         </activity>
+        <activity
+            android:name=".MainActivity2Activity"
+            android:label="@string/title_activity_main_activity2" >
+        </activity>
     </application>
 
 </manifest>

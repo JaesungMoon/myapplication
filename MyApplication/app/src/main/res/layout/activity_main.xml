@@ -19,7 +19,8 @@
         android:text="가계부"
         android:id="@+id/buttonGagebu"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_toLeftOf="@+id/textView"
+        android:layout_toStartOf="@+id/textView" />
 
     <Button
         android:layout_width="wrap_content"
@@ -38,5 +39,14 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:src="@drawable/image_title" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New"
+        android:id="@+id/buttonnew"
+        android:layout_alignTop="@+id/buttonGagebu"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

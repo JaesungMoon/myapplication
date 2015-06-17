@@ -17,6 +17,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         Button btnGagebu = (Button)findViewById(R.id.buttonGagebu);
         btnGagebu.setOnClickListener(this);
 
+        Button btnGagebu2 = (Button)findViewById(R.id.buttonnew);
+        btnGagebu2.setOnClickListener(this);
+
         Button btnExit = (Button)findViewById(R.id.buttonExit);
         btnExit.setOnClickListener(this);
     }
@@ -25,6 +28,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.buttonGagebu:
                 startActivity(new Intent(this, GagebuActivity.class));
+                break;
+            case R.id.buttonnew:
+                startActivity(new Intent(this, MainActivity2Activity.class));
                 break;
             case R.id.buttonExit:
                 finish();
