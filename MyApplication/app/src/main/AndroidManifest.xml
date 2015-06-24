@@ -24,6 +24,10 @@
             android:name=".MainActivity2Activity"
             android:label="@string/title_activity_main_activity2" >
         </activity>
+        <activity
+            android:name=".week_item_test"
+            android:label="@string/title_activity_week_item_test" >
+        </activity>
     </application>
 
 </manifest>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Test App</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -13,6 +13,16 @@
     <string name="week_name_5">금요일</string>
     <string name="week_name_6">토요일</string>
     <string name="week_name_7">일요일</string>
-    <string name="title_activity_main_activity2">MainActivity2Activity</string>
+
+    <string name="week_name_test_1">Monday</string>
+    <string name="week_name_test_2">Tuesday</string>
+    <string name="week_name_test_3">Wednesday</string>
+    <string name="week_name_test_4">Thursday</string>
+    <string name="week_name_test_5">Friday</string>
+    <string name="week_name_test_6">Saturday</string>
+    <string name="week_name_test_7">Sunday</string>
+
+    <string name="title_activity_main_activity2">test</string>
+    <string name="title_activity_week_item_test">week_item_test</string>
 
 </resources>
