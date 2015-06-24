@@ -23,6 +23,7 @@ public class GagebuActivity extends ActionBarActivity implements View.OnClickLis
     LinearLayout layoutList[] = {layout1,layout2,layout3,layout4,layout5,layout6,layout7};
     TextView textViewTotalUse;
     int totalUse;
+    int moneyArray[]={0,0,0,0,0,0,0};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +36,7 @@ public class GagebuActivity extends ActionBarActivity implements View.OnClickLis
         textViewTotalUse = (TextView)findViewById(R.id.textViewTotalUse);
         for (int i = 0 ; i < layoutList.length ; ++i){
             layoutList[i] = (LinearLayout)findViewById(R.id.layoutWeek1+i);
-
+            moneyArray[i] = 0;
             TextView txt = (TextView)layoutList[i].findViewById(R.id.textViewWeekName);
             Button btn = (Button)layoutList[i].findViewById(R.id.buttonInput);
             btn.setOnClickListener(weekClickListener);
@@ -99,8 +100,14 @@ public class GagebuActivity extends ActionBarActivity implements View.OnClickLis
                     String text =  edt.getText().toString();
                     TextView tv = (TextView)layoutList[currentWeekIndex].findViewById(R.id.textViewWeekMemoUse);
                     tv.setText("지출 : " + text + " 원");
-
-                    totalUse += Integer.parseInt(text);
+                    moneyArray[currentWeekIndex] = Integer.parseInt(text);
+                    //현상:버그 돈이 계속 추가만 된다
+                    //원인:어떤주의 텍스트인지 구분하지않음
+                    //해결방법:어떤주의 텍스트인지 구분하기
+                    totalUse = 0;
+                    for (int i = 0 ; i < moneyArray.length ; ++i){
+                        totalUse += moneyArray[i];
+                    }
                     textViewTotalUse.setText("총지출 : " + totalUse);
                     break;
             }
