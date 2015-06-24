@@ -40,6 +40,7 @@ public class MainActivity2Activity extends ActionBarActivity implements View.OnC
 
 
         textViewWeek = (TextView) findViewById(R.id.textViewTitle);
+        textViewTotalUse = (TextView)findViewById(R.id.textViewTotalUse);
 
         for (int i = 0; i < layoutlist.length; ++i) {
             layoutlist[i] = (LinearLayout) findViewById(R.id.layoutWeek1 + i);
@@ -103,7 +104,7 @@ public class MainActivity2Activity extends ActionBarActivity implements View.OnC
                     break;
                 case DialogInterface.BUTTON_POSITIVE:
                     String text =  edt.getText().toString();
-                    TextView tv = (TextView)layoutlist[currentWeekIndex].findViewById(R.id.textViewWeekMemoUse);
+                    TextView tv = (TextView)layoutlist[currentWeekIndex].findViewById(R.id.textViewWeekSpend);
                     tv.setText("지출 : " + text + " 원");
 
                     totalUse += Integer.parseInt(text);
