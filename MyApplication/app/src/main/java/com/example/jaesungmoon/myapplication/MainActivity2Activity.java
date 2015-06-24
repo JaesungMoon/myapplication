@@ -106,8 +106,15 @@ public class MainActivity2Activity extends ActionBarActivity implements View.OnC
                     String text =  edt.getText().toString();
                     TextView tv = (TextView)layoutlist[currentWeekIndex].findViewById(R.id.textViewWeekSpend);
                     tv.setText("지출 : " + text + " 원");
+                        
 
                     totalUse += Integer.parseInt(text);
+                    //현상:버그 돈이 계속 추가만 된다
+                    //원인:어떤주의 텍스트인지 구분하지않음
+                    //해결방법:어떤주의 텍스트인지 구분하기
+
+                    //done!
+                    
                     textViewTotalUse.setText("총지출 : " + totalUse);
                     break;
             }
