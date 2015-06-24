@@ -115,7 +115,7 @@ public class MainActivity2Activity extends ActionBarActivity implements View.OnC
 
                     //done!
                     //소스트리 테스트
-                  
+                  //
                     textViewTotalUse.setText("총지출 : " + totalUse);
                     break;
             }
