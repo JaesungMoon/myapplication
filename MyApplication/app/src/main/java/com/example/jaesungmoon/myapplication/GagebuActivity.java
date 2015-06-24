@@ -41,6 +41,8 @@ public class GagebuActivity extends ActionBarActivity implements View.OnClickLis
             Button btn = (Button)layoutList[i].findViewById(R.id.buttonInput);
             btn.setOnClickListener(weekClickListener);
 
+            btn.setOnLongClickListener(longClickListener);
+
             txt.setText(R.string.week_name_1 + i);
 
             if(i == 5){//토요일
@@ -51,7 +53,28 @@ public class GagebuActivity extends ActionBarActivity implements View.OnClickLis
         }
 
     }
+    View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View v) {
+            LinearLayout ll = (LinearLayout)v.getParent();
 
+            currentWeekIndex = ll.getId() - R.id.layoutWeek1;
+
+            String weekName = getString(R.string.week_name_1 + currentWeekIndex);
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(GagebuActivity.this);
+            alertDialogBuilder.setTitle(weekName);
+            alertDialogBuilder.setMessage(weekName + "의 수입을 입력하세요");
+            edt = new EditText(GagebuActivity.this);
+            edt.setInputType(InputType.TYPE_CLASS_NUMBER);
+            alertDialogBuilder.setView(edt);
+            alertDialogBuilder.setNegativeButton("Cancel",alertClickListener);
+            alertDialogBuilder.setPositiveButton("저장",alertClickListener);
+            alertDialogBuilder.show();
+
+            return false;
+        }
+    };
     @Override
     public void onClick(View v) {
         switch (v.getId()){
