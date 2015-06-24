@@ -114,7 +114,8 @@ public class MainActivity2Activity extends ActionBarActivity implements View.OnC
                     //해결방법:어떤주의 텍스트인지 구분하기
 
                     //done!
-                    
+                    //소스트리 테스트
+                  
                     textViewTotalUse.setText("총지출 : " + totalUse);
                     break;
             }
