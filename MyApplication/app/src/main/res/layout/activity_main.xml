@@ -9,54 +9,64 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:textSize="30sp"
-        android:layout_marginTop="56dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_toRightOf="@+id/buttonMonthList"
+        android:layout_toEndOf="@+id/buttonMonthList" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="가계부"
         android:id="@+id/buttonGagebu"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/textView"
-        android:layout_toStartOf="@+id/textView" />
+        android:layout_above="@+id/buttonnew"
+        android:layout_alignRight="@+id/buttonMonthList"
+        android:layout_alignEnd="@+id/buttonMonthList" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="종료"
         android:id="@+id/buttonExit"
-        android:layout_below="@+id/buttonGagebu"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
 
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/image_title" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New"
-        android:id="@+id/buttonnew"
-        android:layout_alignTop="@+id/buttonGagebu"
+        android:src="@drawable/image_title"
+        android:layout_above="@+id/buttonGagebu"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="New"
+        android:id="@+id/buttonnew"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/buttonGagebu"
+        android:layout_alignStart="@+id/buttonGagebu" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="MonthList"
         android:id="@+id/buttonMonthList"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/buttonnew"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MonthListtest"
+        android:id="@+id/buttonMonthListtest"
+        android:layout_above="@+id/buttonExit"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
 
 </RelativeLayout>

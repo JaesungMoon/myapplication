@@ -41,6 +41,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.buttonMonthList:
                 startActivity(new Intent(this, MonthListActivity.class));
                 break;
+            case R.id.buttonMonthListtest:
+                startActivity(new Intent(this, month_list_test.class));
         }
     }
 }

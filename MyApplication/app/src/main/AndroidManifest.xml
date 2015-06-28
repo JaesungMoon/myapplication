@@ -32,6 +32,10 @@
             android:name=".MonthListActivity"
             android:label="@string/title_activity_month_list" >
         </activity>
+        <activity
+            android:name=".month_list_test"
+            android:label="@string/title_activity_month_list_test" >
+        </activity>
     </application>
 
 </manifest>
