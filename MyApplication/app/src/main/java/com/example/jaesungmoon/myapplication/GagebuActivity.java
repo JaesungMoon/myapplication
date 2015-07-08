@@ -21,8 +21,9 @@ public class GagebuActivity extends ActionBarActivity implements View.OnClickLis
     int currentWeekIndex;
     LinearLayout layout1,layout2,layout3,layout4,layout5,layout6,layout7;
     LinearLayout layoutList[] = {layout1,layout2,layout3,layout4,layout5,layout6,layout7};
-    TextView textViewTotalUse;
-    int totalUse;
+    TextView textViewTotalUse,textViewTotalGain,textViewTotalRest;
+
+    int totalUse, totalGain, totalRest;
     int moneyArray[]={0,0,0,0,0,0,0};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,12 @@ public class GagebuActivity extends ActionBarActivity implements View.OnClickLis
         buttonChangeWeekPre.setOnClickListener(this);
         buttonChangeWeekNext.setOnClickListener(this);
         textViewWeek = (TextView)findViewById(R.id.textViewTitle);
+        //합계의 지출수입잔고 텍스트뷰 바인딩
         textViewTotalUse = (TextView)findViewById(R.id.textViewTotalUse);
+        textViewTotalGain = (TextView)findViewById(R.id.textViewTotalGain);
+        textViewTotalRest = (TextView)findViewById(R.id.textViewTotalSum);
+
+
         for (int i = 0 ; i < layoutList.length ; ++i){
             layoutList[i] = (LinearLayout)findViewById(R.id.layoutWeek1+i);
             moneyArray[i] = 0;
@@ -128,10 +134,23 @@ public class GagebuActivity extends ActionBarActivity implements View.OnClickLis
                     //원인:어떤주의 텍스트인지 구분하지않음
                     //해결방법:어떤주의 텍스트인지 구분하기
                     totalUse = 0;
+                    totalGain = 0;
+
                     for (int i = 0 ; i < moneyArray.length ; ++i){
                         totalUse += moneyArray[i];
                     }
-                    textViewTotalUse.setText("총지출 : " + totalUse);
+                    totalRest = totalGain - totalUse;
+                    textViewTotalUse.setText("총지출 : " + totalUse + " 원");
+                    textViewTotalGain.setText("총수입 : " + totalGain + " 원");
+
+                    if(totalRest < 0){//잔고가 마이너스이면은 색깔을 빨간색
+                        textViewTotalRest.setTextColor(Color.RED);
+                        //-기호를 없애고 싶다면
+//                        totalRest = -totalRest;
+                    }else {//잔고가 플러스면은 초록색
+                        textViewTotalRest.setTextColor(Color.GREEN);
+                    }
+                    textViewTotalRest.setText("총잔고 : " + totalRest + " 원");
                     break;
             }
         }
