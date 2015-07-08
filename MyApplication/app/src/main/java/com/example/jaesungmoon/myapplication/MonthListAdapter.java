@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.database.DataSetObserver;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -23,9 +24,13 @@ public class MonthListAdapter extends BaseAdapter{
 
     ArrayList<MonthItem> list;
     Context context;
-    public MonthListAdapter(Context context, ArrayList<MonthItem> monthItemList) {
+    MonthListCallback callback;
+    EditText edt;
+    int dayIndex;
+    public MonthListAdapter(Context context, ArrayList<MonthItem> monthItemList, MonthListCallback callback) {
         list = monthItemList;
         this.context = context;
+        this.callback = callback;
     }
 
     @Override
@@ -50,11 +55,18 @@ public class MonthListAdapter extends BaseAdapter{
 
         @Override
         public void onClick(View v) {
-
+            Button btn = (Button)v;
+            LinearLayout parent = (LinearLayout)btn.getParent();
+            TextView tvDay = (TextView)parent.findViewById(R.id.textViewDay);
+            //1일
+            String dayString = tvDay.getText().toString();
+            int index = dayString.indexOf("일");
+            String subString = dayString.substring(0, index);
+            dayIndex = Integer.parseInt(subString) - 1;
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-            alertDialogBuilder.setTitle("title");
+            alertDialogBuilder.setTitle(tvDay.getText().toString());
             alertDialogBuilder.setMessage("해당요일의 지출를 입력하세요");
-            EditText edt = new EditText(context);
+            edt = new EditText(context);
             edt.setInputType(InputType.TYPE_CLASS_NUMBER);
             alertDialogBuilder.setView(edt);
             alertDialogBuilder.setNegativeButton("Cancel",alertClickListener);
@@ -71,21 +83,8 @@ public class MonthListAdapter extends BaseAdapter{
 
                     break;
                 case DialogInterface.BUTTON_POSITIVE:
-//                    String text =  edt.getText().toString();
-//                    TextView tv = (TextView)layoutlist[currentWeekIndex].findViewById(R.id.textViewWeekSpend);
-//                    tv.setText("지출 : " + text + " 원");
-
-
-//                    totalUse += Integer.parseInt(text);
-                    //현상:버그 돈이 계속 추가만 된다
-                    //원인:어떤주의 텍스트인지 구분하지않음
-                    //해결방법:어떤주의 텍스트인지 구분하기
-
-                    //done!
-                    //소스트리 테스트
-                    //
-                    //
-//                    textViewTotalUse.setText("총지출 : " + totalUse);
+                    int money = Integer.parseInt(edt.getText().toString());
+                    callback.callback(dayIndex, money);
                     break;
             }
         }

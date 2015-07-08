@@ -1,20 +1,20 @@
 package com.example.jaesungmoon.myapplication;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ListAdapter;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
-
 public class MonthListActivity extends ActionBarActivity {
-
 
     ListView listView;
     ArrayList<MonthItem> monthItemList;
+    MonthListAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,36 +25,28 @@ public class MonthListActivity extends ActionBarActivity {
         for (int i = 0 ; i < 31 ; ++i){
             MonthItem item = new MonthItem();
             item.day = i+1;
-            item.gain = i * 100;
-            item.use = i * 30;
             monthItemList.add(item);
         }
-
-        MonthListAdapter adapter = new MonthListAdapter(this, monthItemList);
-
+        adapter = new MonthListAdapter(this, monthItemList, listCallback);
         listView.setAdapter(adapter);
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_month_list, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    MonthListCallback listCallback = new MonthListCallback() {
+        @Override
+        void callback(int day, int money) {
+            Toast.makeText(getBaseContext(),"다이얼로그 클릭 dayIndex = " + day + ", money = " + money, Toast.LENGTH_SHORT).show();
+            MonthItem item = monthItemList.get(day);
+            item.use = money;
+            monthItemList.set(day, item);
+            adapter.notifyDataSetChanged();
+            int total = 0;
+            //총 수입 지출 잔고 처리
+            for(int  i = 0 ; i < monthItemList.size() ; i++){
+                MonthItem month = monthItemList.get(i);
+                total += month.use;
+            }
+            Log.i("DEBUG","total = " + total);
         }
+    };
 
-        return super.onOptionsItemSelected(item);
-    }
 }
