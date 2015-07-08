@@ -4,15 +4,35 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 
 public class month_list_test extends ActionBarActivity {
 
+    ListView listView;
+    ArrayList<monthitemtest> monthItemListtest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_month_list_test);
+        listView = (ListView)findViewById(R.id.listView);
+        monthItemListtest = new ArrayList<monthitemtest>();
+
+        for (int i = 0 ; i < 31 ; ++i){
+            monthitemtest item = new monthitemtest();
+            item.day = i+1;
+            item.gain = i * 100;
+            item.use = i * 30;
+            monthItemListtest.add(item);
+        }
+
+        month_list_adapter adapter = new month_list_adapter(this, monthItemListtest);
+
+        listView.setAdapter(adapter);
     }
+
 
 
     @Override

@@ -25,6 +25,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         Button btnExit = (Button)findViewById(R.id.buttonExit);
         btnExit.setOnClickListener(this);
+
+        Button btnMonthListtest = (Button)findViewById(R.id.buttonMonthListtest);
+        btnMonthListtest.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
