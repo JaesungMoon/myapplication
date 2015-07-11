@@ -28,6 +28,7 @@ public class MainActivity2Activity extends ActionBarActivity implements View.OnC
     int currentWeekIndex;
     TextView textViewTotalUse;
     int totalUse;
+    int moneyArray[]={0,0,0,0,0,0,0};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,16 +106,23 @@ public class MainActivity2Activity extends ActionBarActivity implements View.OnC
                 case DialogInterface.BUTTON_POSITIVE:
                     String text =  edt.getText().toString();
                     TextView tv = (TextView)layoutlist[currentWeekIndex].findViewById(R.id.textViewWeekSpend);
-                    tv.setText("지출 : " + text + " 원");
-                        
+                    tv.setText("Spend : " + text + " 원");
 
-                    totalUse += Integer.parseInt(text);
+                    moneyArray[currentWeekIndex] = Integer.parseInt(text);
+                    totalUse = 0;
+
                     //현상:버그 돈이 계속 추가만 된다
                     //원인:어떤주의 텍스트인지 구분하지않음
                     //해결방법:어떤주의 텍스트인지 구분하기
 
                     //done!
-                    
+                    //소스트리 테스트
+                  //
+                    //
+                    for (int i = 0 ; i < moneyArray.length ; ++i){
+                        totalUse += moneyArray[i];
+                    }
+
                     textViewTotalUse.setText("총지출 : " + totalUse);
                     break;
             }

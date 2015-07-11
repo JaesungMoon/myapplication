@@ -20,8 +20,14 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         Button btnGagebu2 = (Button)findViewById(R.id.buttonnew);
         btnGagebu2.setOnClickListener(this);
 
+        Button btnMonthList = (Button)findViewById(R.id.buttonMonthList);
+        btnMonthList.setOnClickListener(this);
+
         Button btnExit = (Button)findViewById(R.id.buttonExit);
         btnExit.setOnClickListener(this);
+
+        Button btnMonthListtest = (Button)findViewById(R.id.buttonMonthListtest);
+        btnMonthListtest.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -35,6 +41,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.buttonExit:
                 finish();
                 break;
+            case R.id.buttonMonthList:
+                startActivity(new Intent(this, MonthListActivity.class));
+                break;
+            case R.id.buttonMonthListtest:
+                startActivity(new Intent(this, month_list_test.class));
         }
     }
 }

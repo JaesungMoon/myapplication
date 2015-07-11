@@ -1,21 +1,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="6월3주"
-            android:textSize="20sp"
-            android:id="@+id/textViewTitle" />
-     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -40,49 +35,39 @@
             android:text="다음주"
             android:id="@+id/buttonNext" />
     </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
+
+    <ListView
+        android:layout_weight="2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
-
-        <include layout="@layout/week_item" android:id="@+id/layoutWeek1"/>
-        <include layout="@layout/week_item" android:id="@+id/layoutWeek2"/>
-        <include layout="@layout/week_item" android:id="@+id/layoutWeek3" />
-        <include layout="@layout/week_item" android:id="@+id/layoutWeek4"/>
-        <include layout="@layout/week_item" android:id="@+id/layoutWeek5"/>
-        <include layout="@layout/week_item" android:id="@+id/layoutWeek6"/>
-        <include layout="@layout/week_item" android:id="@+id/layoutWeek7"/>
-
-    </LinearLayout>
+        android:id="@+id/listView"
+        android:layout_gravity="center_horizontal" />
 
     <LinearLayout
         android:orientation="vertical"
-        android:paddingLeft="10dp"
         android:layout_width="match_parent"
+        android:padding="10dp"
         android:background="@color/button_material_light"
         android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="수입:"
-            android:id="@+id/textViewTotalGain" />
+            android:id="@+id/textViewMonthlyTotalGain" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="지출:"
-            android:id="@+id/textViewTotalUse" />
+            android:id="@+id/textViewMonthlyTotalUse" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="잔고:"
-            android:id="@+id/textViewTotalSum" />
-     </LinearLayout>
-
-
-
+            android:id="@+id/textViewMonthlyTotalSum" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -24,5 +24,7 @@
 
     <string name="title_activity_main_activity2">test</string>
     <string name="title_activity_week_item_test">week_item_test</string>
+    <string name="title_activity_month_list">MonthListActivity</string>
+    <string name="title_activity_month_list_test">month_list_test</string>
 
 </resources>

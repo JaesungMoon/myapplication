@@ -1,52 +1,70 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin">
 
-    <TextView android:text="가계부" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
         android:id="@+id/textView"
-        android:textSize="30sp"
-        android:layout_marginTop="56dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:text="가계부"
-        android:id="@+id/buttonGagebu"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/textView"
-        android:layout_toStartOf="@+id/textView" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="종료"
-        android:id="@+id/buttonExit"
-        android:layout_below="@+id/buttonGagebu"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp" />
+        android:textSize="30sp"
+        android:layout_gravity="center_horizontal" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
         android:src="@drawable/image_title" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonGagebu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가계부" />
+
+        <Button
+            android:id="@+id/buttonnew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="가계부2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonMonthList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MonthList" />
+
+        <Button
+            android:id="@+id/buttonMonthListtest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="MonthListtest" />
+    </LinearLayout>
+
     <Button
+        android:id="@+id/buttonExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New"
-        android:id="@+id/buttonnew"
-        android:layout_alignTop="@+id/buttonGagebu"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-</RelativeLayout>
+        android:layout_marginTop="30dp"
+        android:text="종료" />
+</LinearLayout>
