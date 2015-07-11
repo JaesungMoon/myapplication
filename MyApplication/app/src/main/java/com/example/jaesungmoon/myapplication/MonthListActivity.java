@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,6 +16,9 @@ public class MonthListActivity extends ActionBarActivity {
     ListView listView;
     ArrayList<MonthItem> monthItemList;
     MonthListAdapter adapter;
+    TextView textViewMonthlyTotalUse;
+    TextView textViewMonthlyTotalGain;
+    TextView textViewMonthlyTotalSum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,11 @@ public class MonthListActivity extends ActionBarActivity {
         }
         adapter = new MonthListAdapter(this, monthItemList, listCallback);
         listView.setAdapter(adapter);
+        textViewMonthlyTotalUse = (TextView) findViewById(R.id.textViewMonthlyTotalUse);
+        textViewMonthlyTotalGain = (TextView) findViewById(R.id.textViewMonthlyTotalGain);
+        textViewMonthlyTotalSum = (TextView) findViewById(R.id.textViewMonthlyTotalSum);
+
+
     }
 
     MonthListCallback listCallback = new MonthListCallback() {
@@ -36,16 +45,37 @@ public class MonthListActivity extends ActionBarActivity {
         void callback(int day, int money) {
             Toast.makeText(getBaseContext(),"다이얼로그 클릭 dayIndex = " + day + ", money = " + money, Toast.LENGTH_SHORT).show();
             MonthItem item = monthItemList.get(day);
-            item.use = money;
+            if(money < 0){
+                item.gain = -money;
+            }else{
+                item.use = money;
+            }
+
             monthItemList.set(day, item);
             adapter.notifyDataSetChanged();
             int total = 0;
+            int totalUse = 0;
+            int totalGain = 0;
             //총 수입 지출 잔고 처리
             for(int  i = 0 ; i < monthItemList.size() ; i++){
                 MonthItem month = monthItemList.get(i);
-                total += month.use;
+                totalUse += month.use;
+                totalGain += month.gain;
+
+//                total += month.gain;
+//                total -= month.use;
             }
+            total = totalGain - totalUse;
+
+
+            Log.i("DEBUG","totalGain = " + totalGain);
+            Log.i("DEBUG","totalUse = " + totalUse);
             Log.i("DEBUG","total = " + total);
+
+            textViewMonthlyTotalGain.setText("수입 : " + totalGain);
+            textViewMonthlyTotalUse.setText("지출 : " + totalUse);
+            textViewMonthlyTotalSum.setText("잔고 : " + total);
+
         }
     };
 

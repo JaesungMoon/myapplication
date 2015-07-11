@@ -1,7 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <LinearLayout
         android:orientation="horizontal"
@@ -15,6 +16,7 @@
             android:textSize="20sp"
             android:id="@+id/textViewTitle" />
     </LinearLayout>
+    <!--
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -23,28 +25,47 @@
         android:layout_marginRight="12dp"
         android:layout_gravity="center_horizontal">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="이전주"
-            android:id="@+id/buttonPre" />
 
         <Space
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
 
-        <Button
+
+    </LinearLayout>
+-->
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/listView"
+        android:layout_weight="0.8"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_weight="0.2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:background="@color/button_material_light"
+        android:layout_height="0dp">
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="다음주"
-            android:id="@+id/buttonNext" />
+            android:text="수입:"
+            android:id="@+id/textViewMonthlyTotalGain" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지출:"
+            android:id="@+id/textViewMonthlyTotalUse" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="잔고:"
+            android:id="@+id/textViewTotalMonthlysum" />
     </LinearLayout>
 
-    <ListView
-        android:layout_weight="2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>

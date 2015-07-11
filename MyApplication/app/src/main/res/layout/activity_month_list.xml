@@ -55,19 +55,19 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="수입:"
-            android:id="@+id/textViewTotalGain" />
+            android:id="@+id/textViewMonthlyTotalGain" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="지출:"
-            android:id="@+id/textViewTotalUse" />
+            android:id="@+id/textViewMonthlyTotalUse" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="잔고:"
-            android:id="@+id/textViewTotalSum" />
+            android:id="@+id/textViewMonthlyTotalSum" />
     </LinearLayout>
 
 </LinearLayout>

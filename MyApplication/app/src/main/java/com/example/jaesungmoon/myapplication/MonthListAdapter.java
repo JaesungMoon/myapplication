@@ -22,11 +22,11 @@ import java.util.ArrayList;
  */
 public class MonthListAdapter extends BaseAdapter{
 
-    ArrayList<MonthItem> list;
-    Context context;
+    ArrayList<MonthItem> list;  //해당일의 내용을 넣는 배열
+    Context context;  // 다이얼로그 입력창에서 받는 데이터
     MonthListCallback callback;
-    EditText edt;
-    int dayIndex;
+    EditText edt;    //context내용을 받는 저장소?
+    int dayIndex;  //입력받은 데이터의 날짜를 넣는곳? collback으로 넘겨줌
     public MonthListAdapter(Context context, ArrayList<MonthItem> monthItemList, MonthListCallback callback) {
         list = monthItemList;
         this.context = context;

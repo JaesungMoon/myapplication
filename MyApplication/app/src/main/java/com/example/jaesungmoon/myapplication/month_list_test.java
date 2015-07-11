@@ -23,8 +23,6 @@ public class month_list_test extends ActionBarActivity {
         for (int i = 0 ; i < 31 ; ++i){
             monthitemtest item = new monthitemtest();
             item.day = i+1;
-            item.gain = i * 100;
-            item.use = i * 30;
             monthItemListtest.add(item);
         }
 
