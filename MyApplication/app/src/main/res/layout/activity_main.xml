@@ -30,14 +30,14 @@
             android:id="@+id/buttonGagebu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="가계부" />
+            android:text="주별내역" />
 
         <Button
             android:id="@+id/buttonnew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="가계부2" />
+            android:text="주테스트" />
     </LinearLayout>
 
     <LinearLayout
@@ -51,14 +51,14 @@
             android:id="@+id/buttonMonthList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MonthList" />
+            android:text="월별내역" />
 
         <Button
             android:id="@+id/buttonMonthListtest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="MonthListtest" />
+            android:text="월테스트" />
     </LinearLayout>
 
     <Button

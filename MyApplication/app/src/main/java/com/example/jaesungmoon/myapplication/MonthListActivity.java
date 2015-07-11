@@ -37,7 +37,6 @@ public class MonthListActivity extends ActionBarActivity {
         textViewMonthlyTotalGain = (TextView) findViewById(R.id.textViewMonthlyTotalGain);
         textViewMonthlyTotalSum = (TextView) findViewById(R.id.textViewMonthlyTotalSum);
 
-
     }
 
     MonthListCallback listCallback = new MonthListCallback() {
@@ -62,8 +61,6 @@ public class MonthListActivity extends ActionBarActivity {
                 totalUse += month.use;
                 totalGain += month.gain;
 
-//                total += month.gain;
-//                total -= month.use;
             }
             total = totalGain - totalUse;
 
